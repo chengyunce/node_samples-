@@ -28,7 +28,6 @@ router.post('/auth', (req, res) => {
     var message = "ログイン失敗"
     // .env で設定した値で、ログインチェック
     // TODO：データベースに接続してユーザ取得
-    
     // TODO：パスワードはハッシュ値でチェック
     if (loginName == process.env.LOGIN_NAME
         && password == process.env.PASSWORD) {
