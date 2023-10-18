@@ -3,7 +3,7 @@ const express = require('express')
 // Routerオブジェクトを生成
 const router = express.Router()
 // models/item.js を読み込む
-const item = require('../models/item')
+const item = require('./models/item')
 
 // GETリクエストの処理
 router.get('/', (req, res) => {
@@ -33,6 +33,18 @@ router.get('/profile', (req, res) => {
     res.render('profile', data)
 })
 
+// 商品一覧
+router.get('/item', (req, res) => {
+    var data = {
+        title: "商品一覧",
+        items: item.get(),
+    }
+    // views/item/index.ejs にデータを渡して表示
+    res.render('item/index', data)
+})
+
+
+// 商品詳細
 // /item/xxx のルーティング（パスパラメーター）
 router.get('/item/:id', (req, res) => {
     const id = req.params.id
