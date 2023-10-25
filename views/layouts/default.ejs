@@ -9,7 +9,12 @@
 <body>
     
     <!-- 各ページのコンテンツがここに表示 -->
-    <%- body %>
+    <%- include('../components/nav.ejs')%>
+    
+    <main class="container">
+        <!-- 各ページのコンテンツがここに表示 -->
+        <%- body %>
+    </main>
 
 </body>
 </html>
